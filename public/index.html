@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slovak English Translator</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>
+      Slovak → English<br />
+      Translator
+    </h1>
+
+    <div class="translator-info">
+      <div class="language-block">
+        <span class="label">Speak</span>
+        <div class="language-card">
+          <span class="flag">🇸🇰</span>
+          <span class="language">Slovak</span>
+        </div>
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="language-block">
+        <span class="label">Translation</span>
+        <div class="language-card">
+          <span class="flag">🇬🇧</span>
+          <span class="language">English</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="section-label">Audio mode</label>
+
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="echoMode" value="sdk" />
+          Original Conversation.startSession()
+        </label>
+
+        <label>
+          <input type="radio" name="echoMode" value="threshold" />
+          WebSocket + Quasi-AEC threshold
+        </label>
+
+        <label>
+          <input type="radio" name="echoMode" value="mute" checked />
+          WebSocket + Mute mic during TTS
+        </label>
+      </div>
+    </div>
+
+    <button id="startBtn">Start Translation</button>
+
+    <p id="status">Status: Idle</p>
+
+    <div class="debug-toggle">
+      <label>
+        <input type="checkbox" id="debugEnabled" />
+        Active debug window
+      </label>
+    </div>
+
+    <div id="debugPanel">
+      <strong>Debug</strong>
+      <pre id="debugLog"></pre>
+    </div>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
